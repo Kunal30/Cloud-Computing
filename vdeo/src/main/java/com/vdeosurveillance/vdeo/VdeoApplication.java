@@ -1,5 +1,8 @@
 package com.vdeosurveillance.vdeo;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
@@ -7,12 +10,28 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-
+import java.io.*;
 @SpringBootApplication
 public class VdeoApplication {
 
-	public static void main(String[] args) {
+	static String USER_AGENT = "Chrome/1";
+	public static void main(String[] args) throws IOException {
 		SpringApplication.run(VdeoApplication.class, args);
+		URL url= new URL("http://206.207.50.7/getvideo");
+		HttpURLConnection con= (HttpURLConnection)url.openConnection();
+		con.setRequestMethod("GET");
+		con.setRequestProperty("User-Agent", USER_AGENT);
+		System.out.println("Successfully DONE!!!!!!");
+		int status= con.getResponseCode();
+		BufferedReader obj=new BufferedReader(new InputStreamReader(con.getInputStream()));
+		String inputLine;
+		StringBuilder content = new StringBuilder();
+		while ((inputLine = obj.readLine()) != null) {
+		    content.append(inputLine);
+//		    System.out.println(inputLine);
+		}
+		System.out.println(content.toString());
+		System.out.println(status);
 	}
 
 	@Bean
