@@ -14,10 +14,10 @@ import java.io.*;
 @SpringBootApplication
 public class VdeoApplication {
 
-	static String USER_AGENT = "Chrome/1";
+	static String USER_AGENT = "Chrome/71";
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(VdeoApplication.class, args);
-		URL url= new URL("http://206.207.50.7/getvideo");
+		URL url= new URL("http://google.com");
 		HttpURLConnection con= (HttpURLConnection)url.openConnection();
 		con.setRequestMethod("GET");
 		con.setRequestProperty("User-Agent", USER_AGENT);
