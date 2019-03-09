@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 public class HelloController {
 
-    @RequestMapping("/")
+//    @RequestMapping("/")
     public String index() {
     	System.out.println();
-        return "Hello Kaise Ho???? Khaana Kha Ke Jaaana Ming Zhao!!!";
+       return "Hello Kaise Ho???? Khaana Kha Ke Jaaana Ming Zhao!!!";
     }
 
 }
