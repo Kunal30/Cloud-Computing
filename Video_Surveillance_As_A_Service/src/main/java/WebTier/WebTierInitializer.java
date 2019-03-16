@@ -28,34 +28,6 @@ public static void main(String args[])throws IOException
 }
 public static void scaleOut()
 {
-	ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
-    try {
-        credentialsProvider.getCredentials();
-    } catch (Exception e) {
-        throw new AmazonClientException(
-                "Cannot load the credentials from the credential profiles file. " +
-                "Please make sure that your credentials file is at the correct " +
-                "location (/home/kunal/.aws/credentials), and is in valid format.",
-                e);
-    }
-	
-	// creating an SQS object to send input trigger to the queue for video surveillance
-	AmazonSQS sqs = AmazonSQSClientBuilder.standard()
-            .withCredentials(credentialsProvider)
-            .withRegion(Regions.US_WEST_1)
-            .build();
-	
-	List<String> queueURLs= sqs.listQueues().getQueueUrls();
-	String queueURL= queueURLs.get(0);
-	System.out.println(queueURL);
-	
-	ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueURL);
-
-	while(true)
-    {
-		
-//		System.out.println("Helllloo Worlrlrlrlrlrd");
-	}        
 	
 }
 }
