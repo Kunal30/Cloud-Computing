@@ -2,6 +2,7 @@
 /media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/S3TransferProgressSample.java
 /media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/WebTierInitiation.java
 /media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/S3Sample.java
+/media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/HelloController.java
 /media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/SimpleQueueServiceSample.java
 /media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/AwsConsoleApp.java
 /media/kunal/Windows8_OS/ASU-Spring_19/CSE-546 Cloud Computing/CSE546-Cloud-Computing/Web-Tier-Instance/src/main/java/com/amazonaws/samples/AmazonDynamoDBSample.java

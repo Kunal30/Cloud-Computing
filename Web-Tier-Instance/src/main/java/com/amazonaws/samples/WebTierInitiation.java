@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -22,13 +23,14 @@ import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.vdeosurveillance.vdeo.VdeoApplication;
 
+@RestController
 public class WebTierInitiation {
 
 	public static void main(String args[])throws IOException
 	{
 		SpringApplication.run(VdeoApplication.class, args);
 		System.out.println("Heeeyyyyaaaa!!!");
-		scaleOut();
+//		scaleOut();
 		
 	}
 	public static void scaleOut()
@@ -63,9 +65,10 @@ public class WebTierInitiation {
 		
 
 	}
-	@RequestMapping("/")
-	public String index() {
-	    	System.out.println("Heyaaaaaa2");
-	       return "Hello Kaise Ho???? Khaana Kha Ke Jaaana Ming Zhao!!!";
-	    }
+    
+//	@RequestMapping("/")
+//	public String index() {
+//	    	System.out.println("Heyaaaaaa2");
+//	       return "Hello Kaise Ho???? Khaana Kha Ke Jaaana Ming Zhao!!!";
+//	    }
 }

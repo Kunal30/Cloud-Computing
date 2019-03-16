@@ -17,24 +17,24 @@ public class VdeoApplication {
 	static String USER_AGENT = "Chrome/71";
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(VdeoApplication.class, args);
-		URL url= new URL("http://google.com");
-		HttpURLConnection con= (HttpURLConnection)url.openConnection();
-		con.setRequestMethod("GET");
-		con.setRequestProperty("User-Agent", USER_AGENT);
-		System.out.println("Successfully DONE!!!!!!");
-		int status= con.getResponseCode();
-		BufferedReader obj=new BufferedReader(new InputStreamReader(con.getInputStream()));
-		String inputLine;
-		StringBuilder content = new StringBuilder();
-		while ((inputLine = obj.readLine()) != null) {
-		    content.append(inputLine);
-//		    System.out.println(inputLine);
-		}
-		System.out.println(content.toString());
-		System.out.println(status);
+//		URL url= new URL("http://google.com");
+//		HttpURLConnection con= (HttpURLConnection)url.openConnection();
+//		con.setRequestMethod("GET");
+//		con.setRequestProperty("User-Agent", USER_AGENT);
+//		System.out.println("Successfully DONE!!!!!!");
+//		int status= con.getResponseCode();
+//		BufferedReader obj=new BufferedReader(new InputStreamReader(con.getInputStream()));
+//		String inputLine;
+//		StringBuilder content = new StringBuilder();
+//		while ((inputLine = obj.readLine()) != null) {
+//		    content.append(inputLine);
+////		    System.out.println(inputLine);
+//		}
+//		System.out.println(content.toString());
+//		System.out.println(status);
 	}
 
-	@Bean
+//	@Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 

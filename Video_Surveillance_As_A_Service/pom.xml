@@ -16,5 +16,10 @@
       <version>1.2.1</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+    <groupId>com.vdeosurveillance</groupId>
+	<artifactId>vdeo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>
