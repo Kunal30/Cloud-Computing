@@ -37,7 +37,7 @@ public class SQS {
                 .build();
 		return sqs;
 	}
-	public void receiveMessages()
+	public String receiveMessages()
 	{
 //		AmazonSQS sqs=getSQSobject();
 		List<String> queueUrls= sqs.listQueues().getQueueUrls();
@@ -48,11 +48,14 @@ public class SQS {
         {	
         for(int i=0;i<messages.size();i++)
         {
-        	System.out.println("Message=");
-        	System.out.println(messages.get(i).getBody());
+//        	System.out.println("Message=");
+//        	System.out.println(messages.get(i).getBody());
         	deleteMessage(messages.get(i));
+        	return messages.get(i).getBody();
         }
         }
+        return "";
+//        return messages.get(0).getBody();
 	}
 	public void sendMessage(String str)
 	{
