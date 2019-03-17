@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import java.io.*;
-@SpringBootApplication
+//@SpringBootApplication
 public class VdeoApplication {
 
 	static String USER_AGENT = "Chrome/71";

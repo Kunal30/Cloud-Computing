@@ -1,0 +1,14 @@
+com/amazonaws/samples/Requests.class
+WebTier/WebTierController.class
+com/amazonaws/samples/S3Sample.class
+com/amazonaws/samples/S3TransferProgressSample$ButtonListener.class
+com/amazonaws/samples/S3TransferProgressSample.class
+SQS/SQS.class
+EC2/EC2.class
+com/amazonaws/samples/InlineTaggingCodeSampleApp.class
+WebTier/WebTierInitializer.class
+com/amazonaws/samples/GettingStartedApp.class
+com/amazonaws/samples/CreateSecurityGroupApp.class
+com/amazonaws/samples/InlineGettingStartedCodeSampleApp.class
+com/amazonaws/samples/SimpleQueueServiceSample.class
+com/amazonaws/samples/S3TransferProgressSample$ButtonListener$1.class

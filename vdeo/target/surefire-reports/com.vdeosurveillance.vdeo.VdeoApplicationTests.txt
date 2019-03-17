@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.vdeosurveillance.vdeo.VdeoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.307 s - in com.vdeosurveillance.vdeo.VdeoApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.875 s - in com.vdeosurveillance.vdeo.VdeoApplicationTests
