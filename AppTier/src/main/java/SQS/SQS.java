@@ -14,6 +14,11 @@ import com.amazonaws.services.sqs.model.SendMessageRequest;
 
 public class SQS {
 
+	AmazonSQS sqs;
+	public SQS()
+	{
+		sqs= getSQSobject();
+	}
 	public AmazonSQS getSQSobject()
 	{
 		ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
@@ -34,7 +39,7 @@ public class SQS {
 	}
 	public void receiveMessages()
 	{
-		AmazonSQS sqs=getSQSobject();
+//		AmazonSQS sqs=getSQSobject();
 		List<String> queueUrls= sqs.listQueues().getQueueUrls();
 		String queueUrl=queueUrls.get(0);
 		ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
@@ -45,32 +50,33 @@ public class SQS {
         {
         	System.out.println("Message=");
         	System.out.println(messages.get(i).getBody());
-        	deleteMessage();
+        	deleteMessage(messages.get(i));
         }
         }
 	}
 	public void sendMessage(String str)
 	{
-		AmazonSQS sqs=getSQSobject();
+//		AmazonSQS sqs=getSQSobject();
 		List<String> queueUrls= sqs.listQueues().getQueueUrls();
 		String queueUrl=queueUrls.get(0);
 		System.out.println("Hey its this queue==="+queueUrl);
 		sqs.sendMessage(new SendMessageRequest(queueUrl, str));
 		System.out.println("Message sent in the queue");
 	}
-	public void deleteMessage()
+	public void deleteMessage(Message msg)
 	{
-		AmazonSQS sqs=getSQSobject();
+//		AmazonSQS sqs=getSQSobject();
 		List<String> queueUrls= sqs.listQueues().getQueueUrls();
 		if(queueUrls.size()>0)
 		{
 		String queueUrl=queueUrls.get(0);
-		ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
-        
-		List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
-		if(messages.size()>0)
-		{String messageReceiptHandle = messages.get(0).getReceiptHandle();
+//		ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
+//        
+//		List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
+//		if(messages.size()>0)
+		{String messageReceiptHandle = msg.getReceiptHandle();
         sqs.deleteMessage(new DeleteMessageRequest(queueUrl, messageReceiptHandle));
+        System.out.println("Message Deleted!!!!");
         }
 //        System.out.println("Message  '"+messageReceiptHandle+" ' has been deleted");
 		}
