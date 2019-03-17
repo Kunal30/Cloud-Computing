@@ -28,6 +28,31 @@ public class Listener {
 	
 	public void dark_classification(String msg)throws IOException
 	{
+		downloadFile();
+		runPythonScripts();
+		
+	}
+	public void runPythonScripts()throws IOException
+	{
+		
+		Process p = Runtime.getRuntime().exec("python /home/kunal/Desktop/HW.py");
+		
+		BufferedReader stdInput = new BufferedReader(new 
+                InputStreamReader(p.getInputStream()));
+
+           BufferedReader stdError = new BufferedReader(new 
+                InputStreamReader(p.getErrorStream()));
+           
+           String s;
+           // read the output from the command
+           System.out.println("Here is the standard output of the command:\n");
+           while ((s = stdInput.readLine()) != null) {
+               System.out.println(s);
+           }
+   
+	}
+	public void downloadFile()throws IOException
+	{
 		BufferedInputStream in = new BufferedInputStream(new URL("http://206.207.50.7/getvideo").openStream());
 		String fileName = "/home/kunal/Desktop/drz.h264";  
 		FileOutputStream fos = new FileOutputStream(fileName);  

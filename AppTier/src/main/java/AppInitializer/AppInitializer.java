@@ -20,7 +20,8 @@ import AppInitializer.AppInitializer;
 @ComponentScan
 @EnableAutoConfiguration
 public class AppInitializer {
-public static void main(String args[])throws IOException
+
+	public static void main(String args[])throws IOException
 {
 	SpringApplication.run(AppInitializer.class, args);
 	System.out.println("App Tier running!!!");
