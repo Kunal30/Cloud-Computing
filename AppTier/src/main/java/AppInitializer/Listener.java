@@ -11,6 +11,7 @@ public class Listener {
 		while(true)
 		{
 			sqs.receiveMessages();
+			System.out.println("Listening!!!!!!!");
 		}
 	}
 }

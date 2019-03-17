@@ -62,12 +62,18 @@ public class SQS {
 	{
 		AmazonSQS sqs=getSQSobject();
 		List<String> queueUrls= sqs.listQueues().getQueueUrls();
+		if(queueUrls.size()>0)
+		{
 		String queueUrl=queueUrls.get(0);
 		ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
-        List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
-        String messageReceiptHandle = messages.get(0).getReceiptHandle();
+        
+		List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
+		if(messages.size()>0)
+		{String messageReceiptHandle = messages.get(0).getReceiptHandle();
         sqs.deleteMessage(new DeleteMessageRequest(queueUrl, messageReceiptHandle));
-        System.out.println("Message  '"+messageReceiptHandle+" ' has been deleted");
+        }
+//        System.out.println("Message  '"+messageReceiptHandle+" ' has been deleted");
+		}
 	}
 
 }
